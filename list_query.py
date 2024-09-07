@@ -22,9 +22,11 @@ class ListQuery(list, FieldLookups):
     def _evaluate_condition(self, item, condition, value) -> bool:
         field_lookups = condition.split("__")
         key = field_lookups.pop(0)
+        item = item.get(key)
         for i in field_lookups:
-            func = getattr(FieldLookups, f"_{i}")
-            if func:
-                return func(item.get(key), value)
+            if func := getattr(FieldLookups, f"_{i}", None):
+                return func(item, value)
+            elif hasattr(item, "get"):
+                item = item.get(i)
 
         return item[key] == value
