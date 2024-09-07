@@ -3,7 +3,7 @@ from __future__ import annotations
 from field_lookups import FieldLookups
 
 
-class ListQuery(list, FieldLookups):
+class ListQuery(list):
     def filter(self, **kwargs) -> ListQuery:
         return self._delete_condition_matching_items(**kwargs)
 
