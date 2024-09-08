@@ -1,6 +1,6 @@
 import unittest
 from list_query import ListQuery
-from tests.test_data.data import data, data2
+from tests.test_data.data import data, nested_dict_data
 
 
 class EqualsConditionTestCase(unittest.TestCase):
