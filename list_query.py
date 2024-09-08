@@ -29,4 +29,4 @@ class ListQuery(list):
             elif hasattr(item, "get"):
                 item = item.get(i)
 
-        return item[key] == value
+        return item[key] == value if isinstance(item, dict) else item == value
