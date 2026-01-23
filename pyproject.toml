@@ -1,14 +1,17 @@
-[tool.poetry]
+[build-system]
+requires = ["uv_build>=0.9.0,<0.10.0"]
+build-backend = "uv_build"
+
+[project]
 name = "collection-query"
 version = "0.1.0"
 description = "Query through your collections like through database"
-authors = ["Ivan R <vanyaryanichev@gmail.com>"]
+authors = [{ name = "Ivan R", email = "vanyaryanichev@gmail.com" }]
+requires-python = ">=3.12,<4"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.12"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
