@@ -2,7 +2,7 @@
 
 ## Build, Lint, and Test Commands
 
-This is a Python 3.12+ project using uv for dependency management.
+This is a Python 3.8+ project using uv for dependency management.
 
 ### Testing
 - **Run all tests**: `python -m unittest discover -v` or `python -m unittest tests -v`
@@ -40,6 +40,7 @@ This project does not currently use automated linting (ruff, black, mypy, pylint
 ### Formatting
 - Use walrus operator (`:=`) when appropriate for assignments within expressions
 - Example: `if func := getattr(FieldLookups, f"_{i}", None):`
+- Walrus operator requires Python 3.8+
 - Keep lines reasonably long but readable (no strict limit observed)
 - Use spaces, not tabs
 
@@ -75,9 +76,10 @@ This project does not currently use automated linting (ruff, black, mypy, pylint
 - Filter/exclude accept multiple kwargs for AND conditions
 
 ### Python Version
-- Target: Python 3.12, 3.13, 3.14 (as specified in pyproject.toml)
-- Minimum: 3.12
-- Use modern Python features appropriate for 3.12+
+- Target: Python 3.8, 3.9, 3.10, 3.11, 3.12, 3.13
+- Minimum: 3.8 (walrus operator `:=` requirement)
+- Tested on: 3.10.15, 3.12.2, 3.12.3, 3.12.6
+- Use modern Python features appropriate for 3.8+
 
 ## Project Overview
 
