@@ -1,15 +1,22 @@
 [build-system]
-requires = ["uv_build>=0.9.0,<0.10.0"]
+requires = ["uv_build>=0.9.0,<0.12.0"]
 build-backend = "uv_build"
 
 [project]
 name = "collection-query"
 version = "0.1.0"
-description = "Query through your collections like through database"
+description = "Query through your collections like through a database"
 authors = [{ name = "Ivan R", email = "vanyaryanichev@gmail.com" }]
 requires-python = ">=3.8"
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["query", "filter", "collection", "list", "django-orm", "lookup"]
 classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
@@ -18,3 +25,8 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
 ]
+
+[project.urls]
+Homepage = "https://github.com/vanya1301/collection_query"
+Repository = "https://github.com/vanya1301/collection_query"
+Issues = "https://github.com/vanya1301/collection_query/issues"

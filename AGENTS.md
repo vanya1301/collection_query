@@ -19,7 +19,7 @@ This project does not currently use automated linting (ruff, black, mypy, pylint
 
 ### Imports
 - Always start with `from __future__ import annotations` in all Python modules
-- Use absolute imports from project modules (e.g., `from field_lookups import FieldLookups`)
+- Use absolute imports from project modules (e.g., `from collection_query.field_lookups import FieldLookups`)
 - Group imports: standard library → third-party → local (though this project only has local imports)
 - No unused imports
 
@@ -64,7 +64,7 @@ This project does not currently use automated linting (ruff, black, mypy, pylint
 - Include `if __name__ == '__main__': unittest.main()` guard in test files
 
 ### Code Organization
-- Main source: `list_query.py`, `field_lookups.py` in root directory
+- Main source: `src/collection_query/list_query.py`, `src/collection_query/field_lookups.py` (src layout, importable as `collection_query`)
 - Tests in `tests/` directory, test data in `tests/test_data/data.py`
 - Use wildcard imports from test data: `from tests.test_data.data import *`
 
@@ -102,7 +102,7 @@ This is a collection query library that provides Django-style query syntax for f
 
 ### Usage Patterns
 ```python
-from list_query import ListQuery
+from collection_query import ListQuery
 
 # Create a ListQuery from a list of dicts
 lq = ListQuery(data)

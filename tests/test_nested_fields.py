@@ -1,5 +1,5 @@
 import unittest
-from list_query import ListQuery
+from collection_query import ListQuery
 from tests.test_data.data import *
 
 

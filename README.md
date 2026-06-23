@@ -17,7 +17,7 @@ for item in data:
 
 **With Collection Query:**
 ```python
-from list_query import ListQuery
+from collection_query import ListQuery
 
 results = ListQuery(data).filter(
     first_name__in=["Blane", "Samara"], 
@@ -54,13 +54,31 @@ results = ListQuery(data).filter(
 
 - Python 3.8 or higher
 
+### Install from PyPI
+
+```bash
+pip install collection-query
+```
+
+Or with [uv](https://github.com/astral-sh/uv):
+
+```bash
+uv add collection-query
+```
+
+Then import and use it:
+
+```python
+from collection_query import ListQuery
+```
+
 ### For Development
 
 This project uses [uv](https://github.com/astral-sh/uv) for dependency management.
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/vanya1301/collection_query.git
 cd collection_query
 ```
 
@@ -88,7 +106,7 @@ results = [item for item in data if item.get("first_name") == "Donalt"]
 
 **With Collection Query:**
 ```python
-from list_query import ListQuery
+from collection_query import ListQuery
 
 results = ListQuery(data).filter(first_name="Donalt")
 ```
@@ -195,7 +213,7 @@ results = ListQuery(data).filter(id__gte=3).exclude(first_name="Donalt")
 ### Real-World Example: API Response Processing
 
 ```python
-from list_query import ListQuery
+from collection_query import ListQuery
 
 # Assume this is a large API response
 api_response = {

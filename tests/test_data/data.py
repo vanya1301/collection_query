@@ -37,6 +37,23 @@ nested_dict_data = [
     {"id": 20, "first_name": "Otho", "last_name": "Gamwell", "car": {"name": "Dodge", "country": "Unknown"}},
 ]
 
+# Heterogeneous data: some items are missing top-level fields, some are missing
+# nested branches, and one entry is not a dict at all. Used to exercise the
+# library against optional/absent fields.
+sparse_data = [
+    {"id": 1, "first_name": "Blane", "car_make": "Chevrolet"},
+    {"id": 2, "first_name": "Sonnnie"},  # no car_make
+    {"id": 3, "car_make": "Lotus"},  # no first_name
+    {"id": 4},  # only id
+]
+
+sparse_nested_data = [
+    {"id": 1, "car": {"name": "Maserati", "country": "Italy"}},
+    {"id": 2, "car": {"name": "Volvo"}},  # car has no country
+    {"id": 3},  # no car at all
+    {"id": 4, "car": {"name": "Nissan", "country": "Japan"}},
+]
+
 nested_list_data = [{
     "id": 1,
     "first_name": "Sheryl",
