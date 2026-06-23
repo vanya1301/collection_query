@@ -51,8 +51,9 @@ This project does not currently use automated linting (ruff, black, mypy, pylint
 - Use `hasattr()` with `callable()` for duck-typing checks
 
 ### Error Handling
-- No explicit error handling in current codebase
-- Relies on Python's built-in exceptions
+- `FieldLookupError` (in `field_lookups.py`) is raised for unknown/typo'd lookups
+- Absent fields are a legitimate non-match (no error); only programmer errors raise
+- Otherwise relies on Python's built-in exceptions
 - Consider using assertions in tests (e.g., `self.assertEqual`, `self.assertTrue`)
 
 ### Testing Patterns
@@ -71,7 +72,7 @@ This project does not currently use automated linting (ruff, black, mypy, pylint
 ### Query Syntax (Domain-Specific)
 - Uses Django-style query syntax for filtering
 - Field lookups use double underscore notation: `field__lookup=value`
-- Supported lookups: `in`, `not`, `in_range`, `lt`, `lte`, `gt`, `gte`, `startswith`, `endswith`, `contains`
+- Supported lookups: `in`, `not`, `in_range`, `lt`, `lte`, `gt`, `gte`, `startswith`, `endswith`, `contains`, `icontains`, `istartswith`, `iendswith`, `iexact`, `regex`, `iregex`, `isnull`, `exists` (use `ListQuery.available_lookups()` to introspect)
 - Nested field access: `car__country="Japan"`
 - Filter/exclude accept multiple kwargs for AND conditions
 
@@ -126,8 +127,9 @@ lq.filter(id__gte=3).exclude(first_name="Donalt")
 ```
 
 ### Filter vs Exclude
-- **filter()**: Keeps only items matching all conditions (AND logic)
-- **exclude()**: Removes items matching all conditions (keeps non-matching items)
+- **filter()**: Returns a new `ListQuery` keeping only items matching all conditions (AND logic)
+- **exclude()**: Returns a new `ListQuery` dropping items matching all conditions (keeps non-matching items)
+- Non-mutating: neither method modifies the source collection or the object passed to the constructor
 - Multiple kwargs in one call are AND-ed together; chaining applies operations sequentially
 
 ## Development Guidelines
