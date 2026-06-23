@@ -1,6 +1,12 @@
 # Collection Query
 
+[![PyPI version](https://img.shields.io/pypi/v/collection-query.svg)](https://pypi.org/project/collection-query/)
+[![Python versions](https://img.shields.io/pypi/pyversions/collection-query.svg)](https://pypi.org/project/collection-query/)
+[![License: MIT](https://img.shields.io/pypi/l/collection-query.svg)](https://github.com/vanya1301/collection_query/blob/develop/LICENSE)
+
 A Python library that provides Django-style query syntax for filtering and navigating through large JSON payloads serialized into Python collection objects (lists, dictionaries, etc.).
+
+📦 **Available on PyPI:** https://pypi.org/project/collection-query/
 
 ## Problem Solved
 
@@ -55,6 +61,8 @@ results = ListQuery(data).filter(
 - Python 3.8 or higher
 
 ### Install from PyPI
+
+The package is published on PyPI: **https://pypi.org/project/collection-query/**
 
 ```bash
 pip install collection-query
